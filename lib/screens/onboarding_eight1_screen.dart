@@ -1,3 +1,5 @@
+import 'package:drone/screens/confirmation_screen.dart';
+import 'package:drone/screens/onboarding_sixteen1_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,7 +21,6 @@ class OnboardingEight1Screen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          color: Color(0xffffffff),
           // width: double.maxFinite,
           padding: EdgeInsets.all(16.0),
           child: Column(
@@ -30,7 +31,7 @@ class OnboardingEight1Screen extends StatelessWidget {
               _buildRegisteredDroneColumn(context),
               SizedBox(height: 37.0),
               _buildEndOTPColumn(context),
-              // SizedBox(height: 5.0),
+              SizedBox(height: 10.0),
             ],
           ),
         ),
@@ -42,32 +43,46 @@ class OnboardingEight1Screen extends StatelessWidget {
   /// Section Widget
   Widget _buildGoOnlineRow(BuildContext context) {
     var switchValue = false;
-    return Container(
-      padding: EdgeInsets.all(12.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Color(0xffF0F9FD),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            "Go Online",
-            style: TextStyle(
-                fontFamily: 'InterRegular',
-                fontWeight: FontWeight.w500,
-                fontSize: 12.0),
+    return InkWell( 
+      onTap: (){
+
+        showModalBottomSheet(
+
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
           ),
-          CupertinoSwitch(
-            // This bool value toggles the switch.
-            value: switchValue,
-            activeColor: CupertinoColors.activeBlue,
-            onChanged: (bool? value) {
-              // This is called when the user toggles the switch.
-            },
-          ),
-        ],
+          // isScrollControlled: true,
+          context: context,
+          builder: (ctx) => ConfirmDeparture(),
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.all(12.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Color(0xffF0F9FD),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "Go Online",
+              style: TextStyle(
+                  fontFamily: 'InterRegular',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12.0),
+            ),
+            CupertinoSwitch(
+              // This bool value toggles the switch.
+              value: switchValue,
+              activeColor: CupertinoColors.activeBlue,
+              onChanged: (bool? value) {
+                // This is called when the user toggles the switch.
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -98,6 +113,8 @@ class OnboardingEight1Screen extends StatelessWidget {
               children: [
                 Image.asset(
                   'assets/images/drone.png',
+                  // height: 200.v,
+                  // width: 500.h,
                   fit: BoxFit.fill,
                 ),
                 SizedBox(
@@ -117,9 +134,7 @@ class OnboardingEight1Screen extends StatelessWidget {
                 SizedBox(
                   height: 16.0,
                 ),
-                Divider(
-                  thickness: 1.0,
-                ),
+                Divider(),
                 SizedBox(
                   height: 16.0,
                 ),
@@ -303,11 +318,11 @@ class OnboardingEight1Screen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 8.0),
+                // SizedBox(height: 12.0),
                 Divider(
                   thickness: 1.0,
                 ),
-                SizedBox(height: 11.0),
+                // SizedBox(height: 11.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -321,12 +336,12 @@ class OnboardingEight1Screen extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                           color: Color(0xff219994),
                         ),
-                        // style: CustomTextStyles.labelLargeTeal400,
                       ),
                     ),
                     SizedBox(
-                      height: 36.0,
+                      height: 35.0,
                       child: DecoratedBox(
+
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.0),
                           gradient: LinearGradient(
@@ -337,7 +352,9 @@ class OnboardingEight1Screen extends StatelessWidget {
                           ),
                         ),
                         child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>OnboardingSixteen1Screen()));
+                            },
                             child: Text('Start OTP',
                             style: TextStyle(
                               fontFamily: 'InterRegular',
@@ -368,4 +385,13 @@ class OnboardingEight1Screen extends StatelessWidget {
     );
   }
 
+  ///Handling page based on route
+  // Widget getCurrentPage(String currentRoute) {
+  //   switch (currentRoute) {
+  //     case AppRoutes.onboardingThree1Page:
+  //       return OnboardingThree1Page();
+  //     default:
+  //       return DefaultWidget();
+  //   }
+  // }
 }

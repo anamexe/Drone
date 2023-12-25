@@ -1,4 +1,4 @@
-import 'package:drone/screens/accept_booking_page.dart';
+import 'package:drone/screens/confirmation_screen.dart';
 import 'package:drone/screens/onboarding_eight1_screen.dart';
 import 'package:drone/screens/onboarding_seventeen1_screen.dart';
 import 'package:drone/screens/onboarding_three1_page.dart';
@@ -22,7 +22,6 @@ class OnboardingOne1Screen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          color: Color(0xffffffff),
           width: double.maxFinite,
           padding: EdgeInsets.all(16.0),
           child: Column(
@@ -52,9 +51,6 @@ class OnboardingOne1Screen extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: Colors.teal[50]
       ),
-      // decoration: AppDecoration.fillGray100.copyWith(
-      //   borderRadius: BorderRadiusStyle.roundedBorder4,
-      // ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,12 +62,7 @@ class OnboardingOne1Screen extends StatelessWidget {
               // style: theme.textTheme.labelLarge,
             ),
           ),
-          // CustomSwitch(
-          //   value: isSelectedSwitch,
-          //   onChange: (value) {
-          //     isSelectedSwitch = value;
-          //   },
-          // ),
+
         ],
       ),
     );
@@ -170,6 +161,7 @@ class OnboardingOne1Screen extends StatelessWidget {
       children: [
         Text(
           "Upcoming Bookings",
+          // style: theme.textTheme.titleSmall,
         ),
         SizedBox(height: 13.0),
         Container(
@@ -191,6 +183,7 @@ class OnboardingOne1Screen extends StatelessWidget {
       ],
     );
   }
+
 }
 class MyNavigationBar extends StatefulWidget {
   // MyNavigationBar ({}) : super(key: key);
@@ -205,7 +198,7 @@ class _MyNavigationBarState extends State<MyNavigationBar > {
     OnboardingThree1Page(),
     OnboardingEight1Screen(),
     OnboardingSeventeen1Screen(),
-    AcceptBookingPage(),
+    ConfirmDeparture(),
     // OnboardingTwoTabContainerScreen(),
     // OnboardingSixteen1Screen()
   ];
@@ -245,17 +238,13 @@ class _MyNavigationBarState extends State<MyNavigationBar > {
               icon:ImageIcon(
                 AssetImage('assets/images/Payment.png') as ImageProvider<Object>?,
               ),
-              // title: Text('Profile'),
               label: 'Payment',
-              // backgroundColor: Colors.blue,
             ),
             BottomNavigationBarItem(
               icon:ImageIcon(
                 AssetImage('assets/images/More.png') as ImageProvider<Object>?,
               ),
-              // title: Text('Profile'),
               label: 'More',
-              // backgroundColor: Colors.blue,
             ),
           ],
           type: BottomNavigationBarType.shifting,

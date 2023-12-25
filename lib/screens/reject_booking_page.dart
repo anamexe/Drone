@@ -101,6 +101,74 @@ class _RejectBookingPageState extends State<RejectBookingPage> {
                   },
                 ),
               ),
+              // Column(
+              //   children: <Widget>[
+              //     RadioListTile<SingingCharacter>(
+              //       activeColor: Color(0xff219994),
+              //       title: Text('Out of Range',style: TextStyle(
+              //         fontFamily: 'InterRegular',
+              //         fontWeight: FontWeight.w400,
+              //         fontSize: 14.0,
+              //         color: Color(0xff000000),
+              //       )),
+              //       value: SingingCharacter.Out,
+              //       groupValue: _character,
+              //       onChanged: (SingingCharacter? value) {
+              //         setState(() {
+              //           _character = value;
+              //         });
+              //       },
+              //     ),
+              //     RadioListTile<SingingCharacter>(
+              //       activeColor: Color(0xff219994),
+              //       title: const Text('Drone not available',style: TextStyle(
+              //         fontFamily: 'InterRegular',
+              //         fontWeight: FontWeight.w400,
+              //         fontSize: 14.0,
+              //         color: Color(0xff000000),
+              //       )),
+              //       value: SingingCharacter.Drone,
+              //       groupValue: _character,
+              //       onChanged: (SingingCharacter? value) {
+              //         setState(() {
+              //           _character = value;
+              //         });
+              //       },
+              //     ),
+              //     RadioListTile<SingingCharacter>(
+              //       activeColor: Color(0xff219994),
+              //       title: const Text('Technical issue',style: TextStyle(
+              //         fontFamily: 'InterRegular',
+              //         fontWeight: FontWeight.w400,
+              //         fontSize: 14.0,
+              //         color: Color(0xff000000),
+              //       )),
+              //       value: SingingCharacter.Technical,
+              //       groupValue: _character,
+              //       onChanged: (SingingCharacter? value) {
+              //         setState(() {
+              //           _character = value;
+              //         });
+              //       },
+              //     ),
+              //     RadioListTile<SingingCharacter>(
+              //       activeColor: Color(0xff219994),
+              //       title: const Text('Reasons not listed here',style: TextStyle(
+              //           fontFamily: 'InterRegular',
+              //         fontWeight: FontWeight.w400,
+              //         fontSize: 14.0,
+              //         color: Color(0xff000000),
+              //       )),
+              //       value: SingingCharacter.Reason,
+              //       groupValue: _character,
+              //       onChanged: (SingingCharacter? value) {
+              //         setState(() {
+              //           _character = value;
+              //         });
+              //       },
+              //     ),
+              //   ],
+              // ),
               InkWell(
                 onTap: () {},
                 child: Padding(
@@ -108,6 +176,8 @@ class _RejectBookingPageState extends State<RejectBookingPage> {
                   child: Container(
                     // width: 327.0,
                     height: 48.0,
+                    // padding: EdgeInsets.only(left: 24.0,right: 24.0),
+                    // color: Color(0xff25A19D),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.0),
                         gradient: LinearGradient(
@@ -161,7 +231,6 @@ class _RejectBookingPageState extends State<RejectBookingPage> {
             ),
           ),
         ),
-        backgroundColor: Color(0xffffffff),
       ),
     );
   }

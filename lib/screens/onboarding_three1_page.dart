@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+
 // ignore_for_file: must_be_immutable
 class OnboardingThree1Page extends StatelessWidget {
   OnboardingThree1Page({Key? key})
@@ -47,8 +48,6 @@ class OnboardingThree1Page extends StatelessWidget {
     return InkWell(
       onTap: (){
         showModalBottomSheet(
-          // barrierColor: Color(0xffffffff),
-          // backgroundColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20.0),
           ),
@@ -99,9 +98,6 @@ class OnboardingThree1Page extends StatelessWidget {
         borderRadius: BorderRadius.circular(4.0),
         color: Color(0xffFFFBF5),
       ),
-      // decoration: AppDecoration.fillGray100.copyWith(
-      //   borderRadius: BorderRadiusStyle.roundedBorder4,
-      // ),
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -167,6 +163,7 @@ class OnboardingThree1Page extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "AGRAS MG-1S SERIES",
+                    // style: CustomTextStyles.titleSmall_1,
                     style: TextStyle(
                         fontFamily: 'InterSemiBold0',
                         fontWeight: FontWeight.w600,

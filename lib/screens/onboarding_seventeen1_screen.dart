@@ -1,6 +1,6 @@
+import 'package:drone/screens/onboarding_two_tab_container_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:flytor/presentation/onboarding_two_tab_container_screen/onboarding_two_tab_container_screen.dart';
 
 
 class OnboardingSeventeen1Screen extends StatelessWidget {
@@ -14,7 +14,6 @@ class OnboardingSeventeen1Screen extends StatelessWidget {
             appBar: _buildAppBar(context),
             // appBar: _buildAppBar(context),
             body: Container(
-              color: Color(0xffffffff),
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Column(children: [
@@ -37,7 +36,7 @@ class OnboardingSeventeen1Screen extends StatelessWidget {
         child: IconButton(
           icon: Icon(
             Icons.arrow_back_ios_new,
-            color: Colors.black,
+            color: Color(0xff000000),
           ),
           onPressed: () {},
         ),
@@ -63,7 +62,7 @@ class OnboardingSeventeen1Screen extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     fontSize: 14,
                     color: Color(0xff000000)
-                 ),
+                  ),
                 )),
           ],
         ),
@@ -78,11 +77,6 @@ class OnboardingSeventeen1Screen extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4.0),
         ),
-
-        // width: 343.h,
-        // padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 13.v),
-        // decoration: AppDecoration.outlineBlack
-        //     .copyWith(borderRadius: BorderRadiusStyle.roundedBorder4),
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
@@ -161,6 +155,9 @@ class OnboardingSeventeen1Screen extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4.0),
         ),
+        // padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 11.v),
+        // decoration: AppDecoration.outlineBlack
+        //     .copyWith(borderRadius: BorderRadiusStyle.roundedBorder4),
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
@@ -211,10 +208,8 @@ class OnboardingSeventeen1Screen extends StatelessWidget {
                           fontSize: 14.0,
                           color: Color(0xff4894FE)))
                 ]),
-                SizedBox(height: 10.0),
-                Divider(
-                  thickness: 1.0,
-                ),
+                SizedBox(height: 14.0),
+                Divider(),
                 SizedBox(height: 11.0),
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -386,7 +381,7 @@ class OnboardingSeventeen1Screen extends StatelessWidget {
   Widget _buildEndOtp(BuildContext context) {
     return InkWell(
       onTap: () {
-        // Navigator.push(context, MaterialPageRoute(builder: (context)=>OnboardingTwoTabContainerScreen()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>OnboardingTwoTabContainerScreen()));
       },
       child: Padding(
         padding: const EdgeInsets.only(left: 24.0,right: 24.0),
@@ -404,7 +399,8 @@ class OnboardingSeventeen1Screen extends StatelessWidget {
                     Color(0xff001D1C),
                     Color(0xff25A19D),
 
-                  ])),
+                  ])
+          ),
           child: Center(
               child: Text(
                 'End OTP',
